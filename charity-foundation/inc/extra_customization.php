@@ -65,3 +65,64 @@ $ngo_charity_donation_custom_style .= ":root {";
     $ngo_charity_donation_custom_style .= "--theme-text-color: {$color_text};";
     $ngo_charity_donation_custom_style .= "--theme-footer-color: {$color_footer_bg};";
 $ngo_charity_donation_custom_style .= "}";
+
+$charity_foundation_slider_opacity = get_theme_mod( 'charity_foundation_slider_opacity','1');
+
+if($charity_foundation_slider_opacity == '0'){
+$ngo_charity_donation_custom_style .='#slider img {';
+    $ngo_charity_donation_custom_style .='opacity: 0';
+$ngo_charity_donation_custom_style .='}';
+
+}else if($charity_foundation_slider_opacity == '0.1'){
+$ngo_charity_donation_custom_style .='#slider img {';
+    $ngo_charity_donation_custom_style .='opacity: 0.1';
+$ngo_charity_donation_custom_style .='}';
+
+}else if($charity_foundation_slider_opacity == '0.2'){
+$ngo_charity_donation_custom_style .='#slider img {';
+    $ngo_charity_donation_custom_style .='opacity: 0.2';
+$ngo_charity_donation_custom_style .='}';
+
+}else if($charity_foundation_slider_opacity == '0.3'){
+$ngo_charity_donation_custom_style .='#slider img {';
+    $ngo_charity_donation_custom_style .='opacity: 0.3';
+$ngo_charity_donation_custom_style .='}';
+
+}else if($charity_foundation_slider_opacity == '0.4'){
+$ngo_charity_donation_custom_style .='#slider img {';
+    $ngo_charity_donation_custom_style .='opacity: 0.4';
+$ngo_charity_donation_custom_style .='}';
+
+}else if($charity_foundation_slider_opacity == '0.5'){
+$ngo_charity_donation_custom_style .='#slider img {';
+    $ngo_charity_donation_custom_style .='opacity: 0.5';
+$ngo_charity_donation_custom_style .='}';
+
+}else if($charity_foundation_slider_opacity == '0.6'){
+$ngo_charity_donation_custom_style .='#slider img {';
+    $ngo_charity_donation_custom_style .='opacity: 0.6';
+$ngo_charity_donation_custom_style .='}';
+
+}else if($charity_foundation_slider_opacity == '0.7'){
+$ngo_charity_donation_custom_style .='#slider img {';
+    $ngo_charity_donation_custom_style .='opacity: 0.7';
+$ngo_charity_donation_custom_style .='}';
+
+}else if($charity_foundation_slider_opacity == '0.8'){
+$ngo_charity_donation_custom_style .='#slider img {';
+    $ngo_charity_donation_custom_style .='opacity: 0.8';
+$ngo_charity_donation_custom_style .='}';
+
+}
+else if($charity_foundation_slider_opacity == '0.9'){
+$ngo_charity_donation_custom_style .='#slider img {';
+    $ngo_charity_donation_custom_style .='opacity: 0.9';
+$ngo_charity_donation_custom_style .='}';
+
+}
+else if($charity_foundation_slider_opacity == '1'){
+$ngo_charity_donation_custom_style .='#slider img {';
+    $ngo_charity_donation_custom_style .='opacity: 1';
+$ngo_charity_donation_custom_style .='}';
+
+}
