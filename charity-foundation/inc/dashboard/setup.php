@@ -2,7 +2,7 @@
 wp_enqueue_script( 'updates' ); ?>
 
 <div class="theme-offer">
-	<?php 
+  <?php 
   if(isset($_GET['import-demo'])){
     $home_id=''; $blog_id=''; $page_id=''; $about_id='';
 
@@ -46,7 +46,20 @@ wp_enqueue_script( 'updates' ); ?>
       // Set the static front page
       update_option('page_on_front', $home_id);
       update_option('show_on_front', 'page');
+
+    }else {
+      // Get the ID of the existing page
+      $home_id = page_exists_by_title($home_title);
+
+      // Set the home page template
+      add_post_meta($home_id, '_wp_page_template', 'page-template/custom-home-page.php');
+      
+      // Set the static front page
+      update_option('page_on_front', $home_id);
+      update_option('show_on_front', 'page');
     }
+    
+
 
     // Create a Page if it doesn't exist
     if ( !page_exists_by_title('Page') ) {
@@ -62,6 +75,9 @@ wp_enqueue_script( 'updates' ); ?>
         'post_name'     => 'page'
       );
       $page_id = wp_insert_post($ot_page);
+    }else {
+      // Get the ID of the existing page
+      $ot_page = page_exists_by_title('Page');
     }
 
     if ( !page_exists_by_title('Page Left Sidebar') ) {
@@ -80,6 +96,9 @@ wp_enqueue_script( 'updates' ); ?>
 
       // Set the page template
       add_post_meta($page_id, '_wp_page_template', 'page-template/left-sidebar.php');
+    }else {
+      // Get the ID of the existing page
+      $ot_page = page_exists_by_title('Page Left Sidebar');
     }
 
     if ( !page_exists_by_title('Page Right Sidebar') ) {
@@ -98,6 +117,9 @@ wp_enqueue_script( 'updates' ); ?>
 
       // Set the page template
       add_post_meta($page_id, '_wp_page_template', 'page-template/right-sidebar.php');
+    }else {
+      // Get the ID of the existing page
+      $ot_page = page_exists_by_title('Page Right Sidebar');
     }
 
     // ------- Create Left Menu --------
@@ -111,7 +133,7 @@ wp_enqueue_script( 'updates' ); ?>
 
       // Add the HOME item
       wp_update_nav_menu_item($menu_id, 0, array(
-          'menu-item-title'  => __('Home', 'ngo-charity-donation'),
+          'menu-item-title'  => __('Home', 'charity-foundation'),
           'menu-item-classes' => 'home',
           'menu-item-url'     => home_url('/'),
           'menu-item-status'  => 'publish'
@@ -119,7 +141,7 @@ wp_enqueue_script( 'updates' ); ?>
 
       // Add the PAGE item
       $parent_page_item_id = wp_update_nav_menu_item($menu_id, 0, array(
-          'menu-item-title'  => __('Pages', 'ngo-charity-donation'),
+          'menu-item-title'  => __('Pages', 'charity-foundation'),
           'menu-item-classes' => 'page',
           'menu-item-url'     => home_url('/index.php/page/'),
           'menu-item-status'  => 'publish'
@@ -127,7 +149,7 @@ wp_enqueue_script( 'updates' ); ?>
 
       // Add the Page Left Sidebar item as a child of PAGE
       wp_update_nav_menu_item($menu_id, 0, array(
-          'menu-item-title'   => __('Page Left Sidebar', 'ngo-charity-donation'),
+          'menu-item-title'   => __('Page Left Sidebar', 'charity-foundation'),
           'menu-item-classes' => 'page-left',
           'menu-item-url'     => home_url('/index.php/page-left/'),
           'menu-item-status'  => 'publish',
@@ -136,7 +158,7 @@ wp_enqueue_script( 'updates' ); ?>
 
       // Add the Page Right Sidebar item as a child of PAGE
       wp_update_nav_menu_item($menu_id, 0, array(
-          'menu-item-title'   => __('Page Right Sidebar', 'ngo-charity-donation'),
+          'menu-item-title'   => __('Page Right Sidebar', 'charity-foundation'),
           'menu-item-classes' => 'page-right',
           'menu-item-url'     => home_url('/index.php/page-right/'),
           'menu-item-status'  => 'publish',
@@ -144,21 +166,21 @@ wp_enqueue_script( 'updates' ); ?>
       ));
 
       wp_update_nav_menu_item($menu_id, 0, array(
-          'menu-item-title'  => __('Our Courses', 'ngo-charity-donation'),
+          'menu-item-title'  => __('Our Courses', 'charity-foundation'),
           'menu-item-classes' => 'our-courses',
           'menu-item-url'     => '#',
           'menu-item-status'  => 'publish'
       ));
 
       wp_update_nav_menu_item($menu_id, 0, array(
-          'menu-item-title'  => __('Case Studies', 'ngo-charity-donation'),
+          'menu-item-title'  => __('Case Studies', 'charity-foundation'),
           'menu-item-classes' => 'case-studies',
           'menu-item-url'     => '#',
           'menu-item-status'  => 'publish'
       ));
 
       wp_update_nav_menu_item($menu_id, 0, array(
-          'menu-item-title'  => __('Features', 'ngo-charity-donation'),
+          'menu-item-title'  => __('Features', 'charity-foundation'),
           'menu-item-classes' => 'features',
           'menu-item-url'     => '#',
           'menu-item-status'  => 'publish'
@@ -201,6 +223,8 @@ wp_enqueue_script( 'updates' ); ?>
     set_theme_mod( 'ngo_charity_donation_instagram', 'https://instagram.com/' );
 
     //-------------- Slider-----------------------
+
+    set_theme_mod('ngo_charity_donation_slider_count','4');
 
     set_theme_mod( 'ngo_charity_donation_slide_heading', 'GIVE A HAND TO MAKE' );
 
@@ -336,16 +360,16 @@ wp_enqueue_script( 'updates' ); ?>
 
   } ?>
   
-  <p class="plugin-text"><?php echo esc_html_e('Before Demo Import first install given plugin, ','ngo-charity-donation'); ?><span><?php echo esc_html_e('WooCommerce','ngo-charity-donation'); ?></span></p>
-  <p class="note"><?php esc_html_e("If your website is already live and containing data, please make a backup.This importer will override the Charity Foundation's new customizable values.",'ngo-charity-donation'); ?></p>
+  <p class="plugin-text"><?php echo esc_html_e('Before Demo Import first install given plugin, ','charity-foundation'); ?><span><?php echo esc_html_e('WooCommerce','charity-foundation'); ?></span></p>
+  <p class="note"><?php esc_html_e("If your website is already live and containing data, please make a backup.This importer will override the Charity Foundation's new customizable values.",'charity-foundation'); ?></p>
   <form id="mep-demo-importer-form" action="<?php echo esc_url(home_url()); ?>/wp-admin/themes.php?page=ngo-charity-donation-guide-page" method="POST">
-    <input type="submit" name="submit" value="<?php echo esc_attr( __('Begin With Demo Import', 'ngo-charity-donation') ); ?>" class="button button-primary button-large">
-    <a href="<?php echo esc_url(home_url('/')); ?>" target="_blank" class="button button-primary button-large"><?php esc_html_e('View Site','ngo-charity-donation'); ?></a>
+    <input type="submit" name="submit" value="<?php echo esc_attr( __('Begin With Demo Import', 'charity-foundation') ); ?>" class="button button-primary button-large">
+    <a href="<?php echo esc_url(home_url('/')); ?>" target="_blank" class="button button-primary button-large"><?php esc_html_e('View Site','charity-foundation'); ?></a>
   </form>
   <div class="mep-spinner-div"><p class="spinner"></p></div>
   <div class="success">
     <?php if (isset($_GET['import-demo'])) {
-       echo esc_html(__('Demo Import Successful', 'ngo-charity-donation'));
+       echo esc_html(__('Demo Import Successful', 'charity-foundation'));
     } ?>
   </div>
   <?php $admin_url = admin_url( 'admin-ajax.php' ); ?>

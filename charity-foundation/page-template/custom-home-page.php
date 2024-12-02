@@ -9,8 +9,8 @@ get_header(); ?>
   <?php if( get_option('ngo_charity_donation_slider_arrows', false) !== 'off'){ ?>
     <section id="slider">
       <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <?php
-          for ( $i = 1; $i <= 4; $i++ ) {
+        <?php $ngo_charity_donation_slider_count = get_theme_mod('ngo_charity_donation_slider_count');
+          for ( $i = 1; $i <= $ngo_charity_donation_slider_count; $i++ ) {
             $ngo_charity_donation_mod =  get_theme_mod( 'ngo_charity_donation_post_setting' . $i );
             if ( 'page-none-selected' != $ngo_charity_donation_mod ) {
               $ngo_charity_donation_slide_post[] = $ngo_charity_donation_mod;
