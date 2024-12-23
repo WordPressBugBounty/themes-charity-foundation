@@ -501,7 +501,7 @@ if (class_exists('WP_Customize_Control') && !class_exists('Charity_Foundation_Pr
                 <img class="charity_foundation_img_responsive " src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/screenshot.png">
             </div>
             <div class="col-md">
-                <h3 style="margin-top:10px; margin-left: 20px; text-decoration:underline; color:#333;"><?php esc_html_e('CHARITY PREMIUM - Features', 'charity-foundation'); ?></h3>
+                <h3 style="margin-top:10px; margin-left: 20px; font-size:12px; text-decoration:underline; color:#333;"><?php esc_html_e('CHARITY PREMIUM - Features', 'charity-foundation'); ?></h3>
                 <ul style="padding-top:10px">
                     <li class="upsell-charity_foundation"> <div class="dashicons dashicons-yes"></div> <?php esc_html_e('Responsive Design', 'charity-foundation');?> </li>
                     <li class="upsell-charity_foundation"> <div class="dashicons dashicons-yes"></div> <?php esc_html_e('Boxed or fullwidth layout', 'charity-foundation');?> </li>

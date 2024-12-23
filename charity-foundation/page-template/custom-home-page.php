@@ -144,9 +144,7 @@ get_header(); ?>
                     <div class="causes-img">
                       <?php if(has_post_thumbnail()){ ?>
                         <?php the_post_thumbnail(); ?>
-                      <?php }else{?>
-                        <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/assets/images/image.png" alt="" />
-                      <?php } ?>
+                      <?php }?>
                     </div>
                   <?php if( get_post_meta($post->ID, 'charity_foundation_raised', true) ||  get_post_meta($post->ID, 'charity_foundation_goal', true) ) {?>
                     <div class="prices-box">

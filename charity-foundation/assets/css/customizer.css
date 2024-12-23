@@ -9,6 +9,7 @@
   background: #f9c416;
   color:#fff;
   border-left-color:#f9c416;
+  font-size: 12px;
 }
 #customize-theme-controls #accordion-section-charity_foundation_pro .accordion-section-title:after{
   color:#fff;
@@ -40,7 +41,7 @@
   padding: 10px;
   border-radius: 5px;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 10px;
 }
 /*Custom head*/
 span.title.head-customize-control-title {
@@ -80,7 +81,6 @@ li.customize-section-description-container.section-meta {
 }
 .customize-pane-parent button.accordion-trigger{
   position: relative;
-  width: 85%;
   padding-left: 30px !important;
 }
 .customize-pane-parent #accordion-section-charity_foundation_pro button.accordion-trigger{

@@ -135,7 +135,7 @@ wp_enqueue_script( 'updates' ); ?>
       wp_update_nav_menu_item($menu_id, 0, array(
           'menu-item-title'  => __('Home', 'charity-foundation'),
           'menu-item-classes' => 'home',
-          'menu-item-url'     => home_url('/'),
+          'menu-item-url'     => home_url('/index.php/home/'),
           'menu-item-status'  => 'publish'
       ));
 
@@ -234,17 +234,50 @@ wp_enqueue_script( 'updates' ); ?>
       $content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.Aster ipsum dolor Tur adipiscing elit, sed do eiusmod. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum';
 
       // Create post object
-      $my_post = array(
+      $ngo_charity_donation_my_post = array(
        'post_title'    => wp_strip_all_tags( $title ),
        'post_content'  => $content,
        'post_status'   => 'publish',
        'post_type'     => 'post',
       );
 
-      $slider_post_id = wp_insert_post($my_post);
+      $ngo_charity_donation_slider_post_id = wp_insert_post($ngo_charity_donation_my_post);
+
+      $ngo_charity_donation_post_image_url = get_stylesheet_directory_uri().'/assets/images/image.png';
+
+      $ngo_charity_donation_image_name = 'image.png';
+      $ngo_charity_donation_upload_dir       = wp_upload_dir(); 
+      // Set upload folder
+      $ngo_charity_donation_image_data       = file_get_contents($ngo_charity_donation_post_image_url); 
+       
+      // Get image data
+      $ngo_charity_donation_unique_file_name = wp_unique_filename( $ngo_charity_donation_upload_dir['path'], $ngo_charity_donation_image_name ); 
+      // Generate unique name
+      $filename= basename( $ngo_charity_donation_unique_file_name ); 
+      // Create image file name
+      // Check folder permission and define file location
+      if( wp_mkdir_p( $ngo_charity_donation_upload_dir['path'] ) ) {
+          $file = $ngo_charity_donation_upload_dir['path'] . '/' . $filename;
+      } else {
+          $file = $ngo_charity_donation_upload_dir['basedir'] . '/' . $filename;
+      }
+      file_put_contents( $file, $ngo_charity_donation_image_data );
+      $wp_filetype = wp_check_filetype( $filename, null );
+      $ngo_charity_donation_attachment = array(
+          'post_mime_type' => $wp_filetype['type'],
+          'post_title'     => sanitize_file_name( $filename ),
+          'post_content'   => '',
+          'post_type'     => 'post',
+          'post_status'    => 'inherit'
+      );
+      $attach_id = wp_insert_attachment( $ngo_charity_donation_attachment, $file, $ngo_charity_donation_slider_post_id );
+      require_once(ABSPATH . 'wp-admin/includes/image.php');
+      $attach_data = wp_generate_attachment_metadata( $attach_id, $file );
+          wp_update_attachment_metadata( $attach_id, $attach_data );
+          set_post_thumbnail( $ngo_charity_donation_slider_post_id, $attach_id );
 
       // Set theme mod for each post created
-      set_theme_mod('ngo_charity_donation_post_setting' . $i, $slider_post_id);
+      set_theme_mod('ngo_charity_donation_post_setting' . $i, $ngo_charity_donation_slider_post_id);
 
     }
 
@@ -258,19 +291,19 @@ wp_enqueue_script( 'updates' ); ?>
 
     set_theme_mod('ngo_charity_donation_volunteer_increament','3');
 
-    $volunteer_icon = array('far fa-handshake','fas fa-house-user','fas fa-people-carry-box');
+    $ngo_charity_donation_volunteer_icon = array('far fa-handshake','fas fa-house-user','fas fa-people-carry-box');
 
-    $volunteer_no = array('612+','24+','60k+');
+    $ngo_charity_donation_volunteer_no = array('612+','24+','60k+');
 
-    $volunteer_title = array('People supported last year','Accommodation and shelter projects','Marginalised People supported daily');
+    $ngo_charity_donation_volunteer_title = array('People supported last year','Accommodation and shelter projects','Marginalised People supported daily');
 
     for($i=1;$i<=3;$i++){
 
-      set_theme_mod( 'ngo_charity_donation_volunteer_box_icon'.$i, $volunteer_icon[$i-1]);
+      set_theme_mod( 'ngo_charity_donation_volunteer_box_icon'.$i, $ngo_charity_donation_volunteer_icon[$i-1]);
 
-      set_theme_mod( 'ngo_charity_donation_volunteer_box_number'.$i, $volunteer_no[$i-1]);
+      set_theme_mod( 'ngo_charity_donation_volunteer_box_number'.$i, $ngo_charity_donation_volunteer_no[$i-1]);
 
-      set_theme_mod( 'ngo_charity_donation_volunteer_box_title'.$i, $volunteer_title[$i-1]);
+      set_theme_mod( 'ngo_charity_donation_volunteer_box_title'.$i, $ngo_charity_donation_volunteer_title[$i-1]);
 
     }
 
@@ -280,80 +313,66 @@ wp_enqueue_script( 'updates' ); ?>
 
     set_theme_mod('charity_foundation_causes_count','4');
 
-    $causes_category = wp_create_category('Our Causes'); 
+    $charity_foundation_causes_category = wp_create_category('Our Causes'); 
 
-    $causes_title=array('Food For All Children','Blood Donation Camp','Save Earth','Old Age Home Collection');
+    $charity_foundation_causes_title=array('Food For All Children','Blood Donation Camp','Save Earth','Old Age Home Collection');
 
-    $raised_value = array('30000','30000','30000','30000');
-    $goal_value = array('50000','50000','50000','50000');
+    $charity_foundation_raised_value = array('30000','30000','30000','30000');
+    $charity_foundation_goal_value = array('50000','50000','50000','50000');
 
     for($i=1;$i<=4;$i++){
 
-      $title = $causes_title[$i-1];
+      $title = $charity_foundation_causes_title[$i-1];
       $content = 'Consectetur adipisicing elit, sed deio eiusmod tempor incididunt ut labore et dolore maesgna aliqsdesua. eteesnim adesde minim.';
 
       // Create post object
-      $my_post = array(
+      $charity_foundation_my_post = array(
        'post_title'    => wp_strip_all_tags( $title ),
        'post_content'  => $content,
        'post_status'   => 'publish',
        'post_type'     => 'post',
-       'post_category' => array($causes_category),
+       'post_category' => array($charity_foundation_causes_category),
+       'order'         => 'ASC'
       );
 
-      $causes_post_id = wp_insert_post($my_post);
+      $charity_foundation_causes_post_id = wp_insert_post($charity_foundation_my_post);
 
         // Set post meta
-        update_post_meta($causes_post_id, 'charity_foundation_raised', $raised_value[$i-1]);
-        update_post_meta($causes_post_id, 'charity_foundation_goal', $goal_value[$i-1]);
+        update_post_meta($charity_foundation_causes_post_id, 'charity_foundation_raised', $charity_foundation_raised_value[$i-1]);
+        update_post_meta($charity_foundation_causes_post_id, 'charity_foundation_goal', $charity_foundation_goal_value[$i-1]);
 
-        // Fetch image and upload
-        $image_url = get_stylesheet_directory_uri().'/assets/images/cause'.$i.'.jpg';
-        $response = wp_remote_get($image_url);
+      $charity_foundation_causes_post_image_url = get_stylesheet_directory_uri().'/assets/images/cause'.$i.'.jpg';
 
-        if (is_wp_error($response)) {
-            // Handle error appropriately
-            continue;
-        }
-
-        $image_data = wp_remote_retrieve_body($response);
-        $upload_dir = wp_upload_dir();
-        $image_name= 'cause'.$i.'.jpg';
-        $unique_file_name = wp_unique_filename($upload_dir['path'], $image_name);
-        $file = $upload_dir['path'] . '/' . $unique_file_name;
-
-        // Use wp_upload_bits to handle file upload
-        $upload = wp_upload_bits($unique_file_name, null, $image_data);
-        if ($upload['error']) {
-            // Handle upload error
-            continue;
-        }
-
-        // Check image file type
-        $wp_filetype = wp_check_filetype($upload['file'], null);
-
-        // Set attachment data
-        $attachment = array(
-            'post_mime_type' => $wp_filetype['type'],
-            'post_title'     => sanitize_file_name($unique_file_name),
-            'post_content'   => '',
-            'post_type'      => 'post',
-            'post_status'    => 'inherit',
-            'order'          => 'ASC'
-        );
-
-        // Create the attachment
-        $attach_id = wp_insert_attachment($attachment, $upload['file'], $causes_post_id);
-
-        // // Include image.php
-        // require_once(ABSPATH . 'wp-admin/includes/image.php');
-
-        // Define attachment metadata
-        $attach_data = wp_generate_attachment_metadata($attach_id, $upload['file']);
-        wp_update_attachment_metadata($attach_id, $attach_data);
-
-        // Assign thumbnail to post
-        set_post_thumbnail($causes_post_id, $attach_id);
+      $charity_foundation_causes_image_name = 'cause'.$i.'.jpg';
+      $charity_foundation_causes_upload_dir       = wp_upload_dir(); 
+      // Set upload folder
+      $charity_foundation_causes_image_data       = file_get_contents($charity_foundation_causes_post_image_url); 
+       
+      // Get image data
+      $charity_foundation_causes_unique_file_name = wp_unique_filename( $charity_foundation_causes_upload_dir['path'], $charity_foundation_causes_image_name ); 
+      // Generate unique name
+      $filename= basename( $charity_foundation_causes_unique_file_name ); 
+      // Create image file name
+      // Check folder permission and define file location
+      if( wp_mkdir_p( $charity_foundation_causes_upload_dir['path'] ) ) {
+          $file = $charity_foundation_causes_upload_dir['path'] . '/' . $filename;
+      } else {
+          $file = $charity_foundation_causes_upload_dir['basedir'] . '/' . $filename;
+      }
+      file_put_contents( $file, $charity_foundation_causes_image_data );
+      $wp_filetype = wp_check_filetype( $filename, null );
+      $charity_foundation_causes_attachment = array(
+          'post_mime_type' => $wp_filetype['type'],
+          'post_title'     => sanitize_file_name( $filename ),
+          'post_content'   => '',
+          'post_type'     => 'post',
+          'post_status'    => 'inherit'
+      );
+      $attach_id = wp_insert_attachment( $charity_foundation_causes_attachment, $file, $charity_foundation_causes_post_id );
+      require_once(ABSPATH . 'wp-admin/includes/image.php');
+      $attach_data = wp_generate_attachment_metadata( $attach_id, $file );
+          wp_update_attachment_metadata( $attach_id, $attach_data );
+          set_post_thumbnail( $charity_foundation_causes_post_id, $attach_id );
     }
 
     set_theme_mod( 'charity_foundation_causes_section_category', 'Our Causes' );
