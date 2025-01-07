@@ -197,3 +197,15 @@ li.customize-section-description-container.section-meta {
 .customize-control .wp-picker-container .wp-picker-input-wrap label input {
   width: 100% !important;
 }
+#customize-control-ngo_charity_donation_reset_colors{
+  position: relative !important;
+}
+.color-reset-btn{
+  font-size: 14px !important;
+  position: absolute !important;
+  top: 15px !important;
+  right: 15px !important;
+  padding: 0 5px !important;
+  line-height: 1.5 !important;
+  min-height: auto !important;
+}
