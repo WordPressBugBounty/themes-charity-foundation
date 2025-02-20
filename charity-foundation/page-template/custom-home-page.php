@@ -128,8 +128,9 @@ get_header(); ?>
         <div class="row">
           <?php
             $charity_foundation_catData=  get_theme_mod('charity_foundation_causes_section_category');
+            $charity_foundation_causes_order = get_theme_mod('charity_foundation_causes_order_type','ascending');
             if($charity_foundation_catData){
-            $ngo_charity_donation_query = new WP_Query(array( 
+              $charity_foundation_args = array( 
 
               'category_name' => esc_html($charity_foundation_catData ,'charity-foundation'),
 
@@ -137,7 +138,18 @@ get_header(); ?>
 
               'order'          => 'ASC'
 
-            ));?>
+            );
+            // Adjust ordering based on user selection
+            if ($charity_foundation_causes_order == 'descending') {
+              $charity_foundation_args['order'] = 'DESC';
+            } else if ($charity_foundation_causes_order == 'a-to-z') {
+              $charity_foundation_args['orderby'] = 'title';
+              $charity_foundation_args['order'] = 'ASC';
+            } else if ($charity_foundation_causes_order == 'z-to-a') {
+              $charity_foundation_args['orderby'] = 'title';
+              $charity_foundation_args['order'] = 'DESC';
+            }
+            $ngo_charity_donation_query = new WP_Query($charity_foundation_args);?>
             <?php while( $ngo_charity_donation_query->have_posts() ) : $ngo_charity_donation_query->the_post(); ?>
               <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="causes-box mb-4 wow zoomIn">

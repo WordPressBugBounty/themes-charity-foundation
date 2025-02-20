@@ -324,6 +324,22 @@ function charity_foundation_customize( $wp_customize ) {
 		'section' => 'charity_foundation_causes_section',
 	));
 
+	$wp_customize->add_setting('charity_foundation_causes_order_type',array(
+        'default' => 'ascending',
+        'sanitize_callback' => 'ngo_charity_donation_sanitize_choices'
+	));
+	$wp_customize->add_control('charity_foundation_causes_order_type',array(
+        'type' => 'select',
+        'label' => __('Post Order','charity-foundation'),
+        'section' => 'charity_foundation_causes_section',
+        'choices' => array(
+            'ascending' => __('Oldest to Newest','charity-foundation'),
+            'descending' => __('Newest to Oldest','charity-foundation'),
+            'a-to-z' => __('A&rarr;Z','charity-foundation'),
+            'z-to-a' => __('Z&rarr;A','charity-foundation'),
+        ),
+	) );
+
 	$wp_customize->add_setting('charity_foundation_causes_count',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'

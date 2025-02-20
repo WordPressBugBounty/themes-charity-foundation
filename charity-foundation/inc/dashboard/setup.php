@@ -332,7 +332,6 @@ wp_enqueue_script( 'updates' ); ?>
        'post_status'   => 'publish',
        'post_type'     => 'post',
        'post_category' => array($charity_foundation_causes_category),
-       'order'         => 'ASC'
       );
 
       $charity_foundation_causes_post_id = wp_insert_post($charity_foundation_my_post);
