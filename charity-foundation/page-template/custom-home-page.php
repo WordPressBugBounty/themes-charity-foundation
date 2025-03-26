@@ -163,13 +163,13 @@ get_header(); ?>
                       <span class="me-3">
                         <?php if( get_post_meta($post->ID, 'charity_foundation_goal', true) ) {?>
                           <span class="first-word"><?php esc_html_e('Goal','charity-foundation'); ?></span>
-                          <span> <?php echo esc_html(get_woocommerce_currency_symbol()); ?><?php echo esc_html(get_post_meta($post->ID,'charity_foundation_goal',true)); ?></span>
+                          <span> <?php if ( class_exists( 'WooCommerce' ) ) { echo esc_html(get_woocommerce_currency_symbol()); } ?><?php echo esc_html(get_post_meta($post->ID,'charity_foundation_goal',true)); ?></span>
                         <?php }?>
                       </span>
                       <span>
                         <?php if( get_post_meta($post->ID, 'charity_foundation_raised', true) ) {?>
                           <span class="first-word"><?php esc_html_e('Raised','charity-foundation'); ?></span>
-                          <span> <?php echo esc_html(get_woocommerce_currency_symbol()); ?><?php echo esc_html(get_post_meta($post->ID,'charity_foundation_raised',true)); ?></span>
+                          <span> <?php if ( class_exists( 'WooCommerce' ) ) { echo esc_html(get_woocommerce_currency_symbol()); } ?><?php echo esc_html(get_post_meta($post->ID,'charity_foundation_raised',true)); ?></span>
                         <?php }?>
                       </span>
                     </div>
