@@ -1,9 +1,5 @@
 <?php //to use wp udpate plugin
-wp_enqueue_script( 'updates' ); ?>
 
-<div class="theme-offer">
-  <?php 
-  if(isset($_GET['import-demo'])){
     $home_id=''; $blog_id=''; $page_id=''; $about_id='';
 
 
@@ -376,41 +372,4 @@ wp_enqueue_script( 'updates' ); ?>
 
     set_theme_mod( 'charity_foundation_causes_section_category', 'Our Causes' );
 
-  } ?>
-  
-  <p class="plugin-text"><?php echo esc_html_e('Before Demo Import first install given plugin, ','charity-foundation'); ?><span><?php echo esc_html_e('WooCommerce','charity-foundation'); ?></span></p>
-  <p class="note"><?php esc_html_e("If your website is already live and containing data, please make a backup.This importer will override the Charity Foundation's new customizable values.",'charity-foundation'); ?></p>
-  <form id="mep-demo-importer-form" action="<?php echo esc_url(home_url()); ?>/wp-admin/themes.php?page=ngo-charity-donation-guide-page" method="POST">
-    <input type="submit" name="submit" value="<?php echo esc_attr( __('Begin With Demo Import', 'charity-foundation') ); ?>" class="button button-primary button-large">
-    <a href="<?php echo esc_url(home_url('/')); ?>" target="_blank" class="button button-primary button-large"><?php esc_html_e('View Site','charity-foundation'); ?></a>
-  </form>
-  <div class="mep-spinner-div"><p class="spinner"></p></div>
-  <div class="success">
-    <?php if (isset($_GET['import-demo'])) {
-       echo esc_html(__('Demo Import Successful', 'charity-foundation'));
-    } ?>
-  </div>
-  <?php $admin_url = admin_url( 'admin-ajax.php' ); ?>
-
-  <script type="text/javascript">
-    function validate() {
-      document.forms[0].submit();
-    }
-    jQuery(document).ready(function($) {
-      var pathUrl = new URL(window.location.href)
-      var searchParams = pathUrl.searchParams.get("import-demo")
-      if(searchParams) {
-        history.replaceState({}, '', 'themes.php?page=ngo-charity-donation-guide-page')
-      }
-      $( "#mep-demo-importer-form" ).submit(function( event ) {
-        event.preventDefault();
-        if(confirm("Are you sure, you want to import demo content?")){
-          $('.spinner').addClass('is-active');
-          location.href = location.href + '&import-demo=true';
-        } else {
-          return false;
-        }
-      });
-    });
-  </script>
-</div>
+ ?>

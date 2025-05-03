@@ -68,6 +68,28 @@ function charity_foundation_setup() {
 	* specifically font, colors, and column width.
 	*/
 	add_editor_style( array( 'assets/css/editor-style.css' ) );
+
+		if ( ! defined( 'NGO_CHARITY_DONATION_SUPPORT' ) ) {
+		define('NGO_CHARITY_DONATION_SUPPORT',__('https://wordpress.org/support/theme/charity-foundation','charity-foundation'));
+		}
+		if ( ! defined( 'NGO_CHARITY_DONATION_REVIEW' ) ) {
+		define('NGO_CHARITY_DONATION_REVIEW',__('https://wordpress.org/support/theme/charity-foundation/reviews/#new-post','charity-foundation'));
+		}
+		if ( ! defined( 'NGO_CHARITY_DONATION_LIVE_DEMO' ) ) {
+		define('NGO_CHARITY_DONATION_LIVE_DEMO',__('https://trial.ovationthemes.com/charity-foundation/','charity-foundation'));
+		}
+		if ( ! defined( 'NGO_CHARITY_DONATION_BUY_PRO' ) ) {
+		define('NGO_CHARITY_DONATION_BUY_PRO',__('https://www.ovationthemes.com/products/charity-donation-wordpress-theme','charity-foundation'));
+		}
+		if ( ! defined( 'NGO_CHARITY_DONATION_PRO_DOC' ) ) {
+		define('NGO_CHARITY_DONATION_PRO_DOC',__('https://trial.ovationthemes.com/docs/ot-charity-foundation-pro-doc/','charity-foundation'));
+		}
+		if ( ! defined( 'NGO_CHARITY_DONATION_FREE_DOC' ) ) {
+		define('NGO_CHARITY_DONATION_FREE_DOC',__('https://trial.ovationthemes.com/docs/ot-charity-foundation-free-doc/','charity-foundation'));
+		}
+		if ( ! defined( 'NGO_CHARITY_DONATION_THEME_NAME' ) ) {
+		define('NGO_CHARITY_DONATION_THEME_NAME',__('Premium Donation Theme','charity-foundation'));
+		}
 }
 add_action( 'after_setup_theme', 'charity_foundation_setup' );
 
@@ -502,8 +524,6 @@ function charity_foundation_save( $post_id ) {
 }
 add_action( 'save_post', 'charity_foundation_save' );
 
-define('CHARITY_FOUNDATION_PRO_LINK',__('https://www.ovationthemes.com/products/charity-donation-wordpress-theme','charity-foundation'));
-
 /* Pro control */
 if (class_exists('WP_Customize_Control') && !class_exists('Charity_Foundation_Pro_Control')):
     class Charity_Foundation_Pro_Control extends WP_Customize_Control{
@@ -511,7 +531,7 @@ if (class_exists('WP_Customize_Control') && !class_exists('Charity_Foundation_Pr
     public function render_content(){?>
         <label style="overflow: hidden; zoom: 1;">
             <div class="col-md upsell-btn">
-                <a href="<?php echo esc_url( CHARITY_FOUNDATION_PRO_LINK ); ?>" target="blank" class="btn btn-success btn"><?php esc_html_e('UPGRADE CHARITY PREMIUM','charity-foundation');?> </a>
+                <a href="<?php echo esc_url( NGO_CHARITY_DONATION_BUY_PRO ); ?>" target="blank" class="btn btn-success btn"><?php esc_html_e('UPGRADE CHARITY PREMIUM','charity-foundation');?> </a>
             </div>
             <div class="col-md">
                 <img class="charity_foundation_img_responsive " src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/screenshot.png">
@@ -545,30 +565,9 @@ if (class_exists('WP_Customize_Control') && !class_exists('Charity_Foundation_Pr
                 </ul>
             </div>
             <div class="col-md upsell-btn upsell-btn-bottom">
-                <a href="<?php echo esc_url( CHARITY_FOUNDATION_PRO_LINK ); ?>" target="blank" class="btn btn-success btn"><?php esc_html_e('UPGRADE CHARITY PREMIUM','charity-foundation');?> </a>
-            </div>
+	            <a href="<?php echo esc_url( NGO_CHARITY_DONATION_BUNDLE_LINK ); ?>" target="blank" class="btn btn-success btn"><?php esc_html_e('WP Theme Bundle (120+ Themes)','ngo-charity-donation');?> </a>
+		    		</div>
         </label>
     <?php } }
 endif;
 
-if ( ! defined( 'NGO_CHARITY_DONATION_SUPPORT' ) ) {
-define('NGO_CHARITY_DONATION_SUPPORT',__('https://wordpress.org/support/theme/charity-foundation','charity-foundation'));
-}
-if ( ! defined( 'NGO_CHARITY_DONATION_REVIEW' ) ) {
-define('NGO_CHARITY_DONATION_REVIEW',__('https://wordpress.org/support/theme/charity-foundation/reviews/#new-post','charity-foundation'));
-}
-if ( ! defined( 'NGO_CHARITY_DONATION_LIVE_DEMO' ) ) {
-define('NGO_CHARITY_DONATION_LIVE_DEMO',__('https://trial.ovationthemes.com/charity-foundation/','charity-foundation'));
-}
-if ( ! defined( 'NGO_CHARITY_DONATION_BUY_PRO' ) ) {
-define('NGO_CHARITY_DONATION_BUY_PRO',__('https://www.ovationthemes.com/products/charity-donation-wordpress-theme','charity-foundation'));
-}
-if ( ! defined( 'NGO_CHARITY_DONATION_PRO_DOC' ) ) {
-define('NGO_CHARITY_DONATION_PRO_DOC',__('https://trial.ovationthemes.com/docs/ot-charity-foundation-pro-doc/','charity-foundation'));
-}
-if ( ! defined( 'NGO_CHARITY_DONATION_FREE_DOC' ) ) {
-define('NGO_CHARITY_DONATION_FREE_DOC',__('https://trial.ovationthemes.com/docs/ot-charity-foundation-free-doc/','charity-foundation'));
-}
-if ( ! defined( 'NGO_CHARITY_DONATION_THEME_NAME' ) ) {
-define('NGO_CHARITY_DONATION_THEME_NAME',__('Premium Donation Theme','charity-foundation'));
-}
