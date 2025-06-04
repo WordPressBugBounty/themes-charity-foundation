@@ -214,6 +214,15 @@ function charity_foundation_customize_register() {
 
   	$wp_customize->remove_setting( 'ngo_charity_donation_slider_opacity' );
   	$wp_customize->remove_control( 'ngo_charity_donation_slider_opacity' );
+
+  	$wp_customize->remove_setting( 'ngo_charity_donation_slider_heading_color' );
+  	$wp_customize->remove_control( 'ngo_charity_donation_slider_heading_color' );
+
+  	$wp_customize->remove_setting( 'ngo_charity_donation_slider_overlay' );
+  	$wp_customize->remove_control( 'ngo_charity_donation_slider_overlay' );
+
+  	$wp_customize->remove_setting( 'ngo_charity_donation_slider_excerpt_color' );
+  	$wp_customize->remove_control( 'ngo_charity_donation_slider_excerpt_color' );
 }
 add_action( 'customize_register', 'charity_foundation_customize_register', 11 );
 

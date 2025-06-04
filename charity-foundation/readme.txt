@@ -4,7 +4,7 @@ Tags: blog, news, portfolio, one-column, two-columns, three-columns, four-column
 Requires at least: 5.0
 Requires PHP: 5.6
 Tested up to: 6.8
-Stable tag: 4.9
+Stable tag: 5.0
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -182,6 +182,12 @@ Charity Foundation is an elegant WordPress theme that brings an excellent layout
 	-- Updated demo import.
 	-- Fixed get start bugs.
 	-- Upated customzer pro section.
+
+= 5.0 =
+	-- Added show/hide footer widgets setting.
+	-- Added Header Image overlay color change setting.
+	-- Added Header Image opacity setting.
+	-- Added similar post query settting.
 
 Child Theme Changes.
 
