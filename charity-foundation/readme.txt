@@ -3,8 +3,8 @@ Contributors: pewilliams
 Tags: blog, news, portfolio, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, grid-layout, custom-colors, custom-background, custom-header, custom-menu, custom-logo, editor-style, sticky-post, featured-images, flexible-header, featured-image-header, footer-widgets, full-width-template, threaded-comments, theme-options, wide-blocks, block-styles, post-formats, translation-ready, rtl-language-support
 Requires at least: 5.0
 Requires PHP: 5.6
-Tested up to: 6.8
-Stable tag: 5.3
+Tested up to: 6.9
+Stable tag: 5.7
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -197,6 +197,18 @@ Charity Foundation is an elegant WordPress theme that brings an excellent layout
 
 = 5.3 =
 	-- Resolved bugs.
+
+= 5.4 =
+	-- Resolved css error.
+
+= 5.5 =
+	-- Updated functions.
+
+= 5.6 =
+    -- Resolves minor css bugs.
+
+= 5.7 =
+    -- Resolves css bugs.	
 
 Child Theme Changes.
 

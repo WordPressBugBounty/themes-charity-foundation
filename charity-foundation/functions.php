@@ -574,7 +574,7 @@ if (class_exists('WP_Customize_Control') && !class_exists('Charity_Foundation_Pr
                 </ul>
             </div>
             <div class="col-md upsell-btn upsell-btn-bottom">
-	            <a href="<?php echo esc_url( NGO_CHARITY_DONATION_BUNDLE_LINK ); ?>" target="blank" class="btn btn-success btn"><?php esc_html_e('WP Theme Bundle (120+ Themes)','ngo-charity-donation');?> </a>
+	            <a href="<?php echo esc_url( NGO_CHARITY_DONATION_BUNDLE_LINK ); ?>" target="blank" class="btn btn-success btn"><?php esc_html_e('WP Theme Bundle (125+ Themes)','ngo-charity-donation');?> </a>
 		    		</div>
         </label>
     <?php } }
