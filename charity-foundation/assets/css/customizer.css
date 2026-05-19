@@ -6,16 +6,30 @@
 #customize-controls #accordion-section-charity_foundation_pro.open .accordion-section-title, 
 #customize-controls #accordion-section-charity_foundation_pro:hover>.accordion-section-title,
 #customize-controls #accordion-section-charity_foundation_pro .accordion-section-title button:hover{
-  background: #f9c416;
+  background: #2B136B;
   color:#fff;
-  border-left-color:#f9c416;
+  border-left-color:#2B136B;
   font-size: 12px;
 }
 #customize-theme-controls #accordion-section-charity_foundation_pro .accordion-section-title:after{
   color:#fff;
 }
-#customize-controls .control-section .accordion-section-title:hover,#customize-controls .control-section .accordion-section-title:focus{
-  border-left-color:#f9c416;
+
+/* Premium Features Section Styling */
+#accordion-section-charity_foundation_premium_features_section h3.accordion-section-title,
+#customize-controls #accordion-section-charity_foundation_premium_features_section .accordion-section-title button:focus,
+#customize-controls #accordion-section-charity_foundation_premium_features_section .accordion-section-title:focus, 
+#customize-controls #accordion-section-charity_foundation_premium_features_section .accordion-section-title:hover, 
+#customize-controls #accordion-section-charity_foundation_premium_features_section.open .accordion-section-title, 
+#customize-controls #accordion-section-charity_foundation_premium_features_section:hover>.accordion-section-title,
+#customize-controls #accordion-section-charity_foundation_premium_features_section .accordion-section-title button:hover{
+  background: #2B136B;
+  color:#fff;
+  border-left-color:#2B136B;
+  font-size: 12px;
+}
+#customize-theme-controls #accordion-section-charity_foundation_premium_features_section .accordion-section-title:after{
+  color:#fff;
 }
 
 .btn-lg, .btn-group-lg > .btn {
@@ -36,11 +50,13 @@
   text-align: center;
   padding: 10px;
   border-radius: 5px;
-  background: #f9c416;
+  background: #2B136B;
 }
 .upsell-btn-bottom{
   margin-top:20px;
 }
+
+
 /*Custom head*/
 span.title.head-customize-control-title {
   padding: 10px;
@@ -96,22 +112,22 @@ li.customize-section-description-container.section-meta {
 #accordion-section-charity_foundation_pro .accordion-trigger:before{
   content: none;
 }
-#accordion-panel-ngo_charity_donation_custompage_panel .accordion-trigger:before {
+#accordion-panel-charity_foundation_custompage_panel .accordion-trigger:before {
   content: "\f102";
 }
 #accordion-section-colors .accordion-trigger:before {
   content: "\f309";
 }
-#accordion-section-ngo_charity_donation_typography_settings .accordion-trigger:before {
+#accordion-section-charity_foundation_typography_settings .accordion-trigger:before {
   content: "\f464";
 }
-#accordion-section-ngo_charity_donation_theme_settings .accordion-trigger:before {
+#accordion-section-charity_foundation_theme_settings .accordion-trigger:before {
   content: "\f111";
 }
-#accordion-section-ngo_charity_donation_mobile_options .accordion-trigger:before {
+#accordion-section-charity_foundation_mobile_options .accordion-trigger:before {
   content: "\f470";
 }
-#accordion-panel-ngo_charity_donation_post_panel .accordion-trigger:before {
+#accordion-panel-charity_foundation_post_panel .accordion-trigger:before {
   content: "\f109";
 }
 #accordion-section-static_front_page .accordion-trigger:before {
@@ -196,7 +212,7 @@ li.customize-section-description-container.section-meta {
   width: 100% !important;
 }
 
-#customize-control-ngo_charity_donation_reset_colors{
+#customize-control-charity_foundation_reset_colors{
   position: relative !important;
 }
 .color-reset-btn{

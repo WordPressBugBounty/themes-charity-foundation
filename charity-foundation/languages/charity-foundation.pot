@@ -1,0 +1,329 @@
+# Copyright (C) 2026 pewilliams
+# This file is distributed under the GNU General Public License v3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Charity Foundation 6.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/charity-foundation\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-04-10T02:02:26+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: charity-foundation\n"
+
+#. Theme Name of the theme
+#: style.css
+msgid "Charity Foundation"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://www.ovationthemes.com/products/free-charity-foundation-wordpress-theme"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "Charity Foundation is an elegant and modern theme designed for charity organizations, non-profit foundations, NGOs, fundraising campaigns, donation platforms, crowdfunding initiatives, social welfare programs, community support projects, and humanitarian relief services. It is also suitable for organizations working in child welfare, disaster relief, medical aid support, pandemic relief funds, educational donations, and volunteer-driven social causes. The design is clean, professional, and purpose-driven, ensuring that campaigns, donation goals, causes, events, testimonials, and impact stories are presented clearly to inspire trust and engagement. Fully responsive and mobile-friendly, it delivers smooth performance across desktops, tablets, and smartphones for wider accessibility. Optimized code structure ensures fast loading speed and improved search visibility, helping organizations reach more supporters and donors effectively. The theme includes flexible customization options for layouts, colors, typography, and branding elements, enabling a strong and consistent identity without technical complexity. It also supports donation systems, payment gateway integration, and fundraising tools, making it easy to manage contributions and campaigns. Social media integration and call-to-action sections further enhance outreach and donor engagement. Overall, it provides a complete solution for building a powerful and trustworthy online presence for non-profit and charitable organizations."
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "pewilliams"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css
+msgid "https://www.ovationthemes.com/"
+msgstr ""
+
+#. translators: %s: post title
+#: comments.php:22
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr ""
+
+#. translators: 1: number of comments, 2: post title
+#: comments.php:27
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:66
+msgid "Comments are closed."
+msgstr ""
+
+#: functions.php:49
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:74
+msgid "https://wordpress.org/support/theme/charity-foundation"
+msgstr ""
+
+#: functions.php:77
+msgid "https://wordpress.org/support/theme/charity-foundation/reviews/#new-post"
+msgstr ""
+
+#: functions.php:80
+msgid "https://trial.ovationthemes.com/charity-foundation/"
+msgstr ""
+
+#: functions.php:83
+msgid "https://www.ovationthemes.com/products/charity-donation-wordpress-theme"
+msgstr ""
+
+#: functions.php:86
+msgid "https://trial.ovationthemes.com/docs/ot-charity-foundation-pro-doc/"
+msgstr ""
+
+#: functions.php:89
+msgid "https://trial.ovationthemes.com/docs/ot-charity-foundation-free-doc/"
+msgstr ""
+
+#: functions.php:92
+msgid "Premium Donation Theme"
+msgstr ""
+
+#: functions.php:115
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:117
+#: functions.php:137
+msgid "Add widgets here to appear in your sidebar on blog posts and archive pages."
+msgstr ""
+
+#: functions.php:125
+msgid "Page Sidebar"
+msgstr ""
+
+#: functions.php:127
+msgid "Add widgets here to appear in your pages and posts"
+msgstr ""
+
+#: functions.php:135
+msgid "Sidebar 3"
+msgstr ""
+
+#: functions.php:145
+msgid "Footer 1"
+msgstr ""
+
+#: functions.php:147
+#: functions.php:157
+#: functions.php:167
+#: functions.php:177
+msgid "Add widgets here to appear in your footer."
+msgstr ""
+
+#: functions.php:155
+msgid "Footer 2"
+msgstr ""
+
+#: functions.php:165
+msgid "Footer 3"
+msgstr ""
+
+#: functions.php:175
+msgid "Footer 4"
+msgstr ""
+
+#: functions.php:245
+msgid "🔒 Unlock Premium Features"
+msgstr ""
+
+#: functions.php:253
+msgid "CHARITY PREMIUM"
+msgstr ""
+
+#: functions.php:265
+msgid "Slider Opacity"
+msgstr ""
+
+#: functions.php:269
+msgid "0"
+msgstr ""
+
+#: functions.php:270
+msgid "0.1"
+msgstr ""
+
+#: functions.php:271
+msgid "0.2"
+msgstr ""
+
+#: functions.php:272
+msgid "0.3"
+msgstr ""
+
+#: functions.php:273
+msgid "0.4"
+msgstr ""
+
+#: functions.php:274
+msgid "0.5"
+msgstr ""
+
+#: functions.php:275
+msgid "0.6"
+msgstr ""
+
+#: functions.php:276
+msgid "0.7"
+msgstr ""
+
+#: functions.php:277
+msgid "0.8"
+msgstr ""
+
+#: functions.php:278
+msgid "0.9"
+msgstr ""
+
+#: functions.php:279
+msgid "1"
+msgstr ""
+
+#: functions.php:285
+msgid "Our Causes Section"
+msgstr ""
+
+#: functions.php:295
+msgid "Our Causes Section Settings"
+msgstr ""
+
+#: functions.php:317
+msgid "Check To Show Section"
+msgstr ""
+
+#: functions.php:319
+msgid "On"
+msgstr ""
+
+#: functions.php:320
+msgid "Off"
+msgstr ""
+
+#: functions.php:331
+msgid "Section Heading Title"
+msgstr ""
+
+#: functions.php:355
+msgid "Select Category to display Latest Post"
+msgstr ""
+
+#: functions.php:365
+msgid "Post Order"
+msgstr ""
+
+#: functions.php:368
+msgid "Oldest to Newest"
+msgstr ""
+
+#: functions.php:369
+msgid "Newest to Oldest"
+msgstr ""
+
+#: functions.php:370
+msgid "A&rarr;Z"
+msgstr ""
+
+#: functions.php:371
+msgid "Z&rarr;A"
+msgstr ""
+
+#: functions.php:380
+msgid "Post Count"
+msgstr ""
+
+#: functions.php:395
+msgid "Copyright Text"
+msgstr ""
+
+#: functions.php:408
+msgid "Theme Color"
+msgstr ""
+
+#: functions.php:420
+msgid "Homepage Section Bg color"
+msgstr ""
+
+#: functions.php:432
+msgid "Theme Heading Color"
+msgstr ""
+
+#: functions.php:444
+msgid "Theme Text Color"
+msgstr ""
+
+#: functions.php:456
+msgid "Footer Bg color"
+msgstr ""
+
+#: functions.php:473
+msgid "Charity Foundation WordPress Theme"
+msgstr ""
+
+#: functions.php:476
+msgid " By Ovation Themes"
+msgstr ""
+
+#: functions.php:481
+msgid "Donation Meta Feilds"
+msgstr ""
+
+#: functions.php:497
+msgid "Raised Price"
+msgstr ""
+
+#: functions.php:505
+msgid "Goal Price"
+msgstr ""
+
+#: inc/dashboard/setup.php:132
+msgid "Home"
+msgstr ""
+
+#: inc/dashboard/setup.php:140
+msgid "Pages"
+msgstr ""
+
+#: inc/dashboard/setup.php:148
+msgid "Page Left Sidebar"
+msgstr ""
+
+#: inc/dashboard/setup.php:157
+msgid "Page Right Sidebar"
+msgstr ""
+
+#: inc/dashboard/setup.php:165
+msgid "Our Courses"
+msgstr ""
+
+#: inc/dashboard/setup.php:172
+msgid "Case Studies"
+msgstr ""
+
+#: inc/dashboard/setup.php:179
+msgid "Features"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Custom Home Page"
+msgstr ""
+
+#: page-template/custom-home-page.php:50
+msgid "DONATE NOW"
+msgstr ""
+
+#: page-template/custom-home-page.php:165
+msgid "Goal"
+msgstr ""
+
+#: page-template/custom-home-page.php:171
+msgid "Raised"
+msgstr ""

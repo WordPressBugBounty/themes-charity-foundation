@@ -31,6 +31,7 @@ add_action( 'wp_enqueue_scripts', 'charity_foundation_enqueue_styles', 99 );
 
 // theme setup
 function charity_foundation_setup() {
+	load_theme_textdomain( 'charity-foundation', get_template_directory() . '/languages' );
 	add_theme_support( 'align-wide' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( "responsive-embeds" );
@@ -241,7 +242,7 @@ function charity_foundation_customize( $wp_customize ) {
 
 	// pro section
 	$wp_customize->add_section('charity_foundation_pro', array(
-		'title'    => __('UPGRADE CHARITY PREMIUM', 'charity-foundation'),
+		'title'    => __('🔒 Unlock Premium Features', 'charity-foundation'),
 		'priority' => 1,
 	));
 	$wp_customize->add_setting('charity_foundation_pro', array(
@@ -538,45 +539,40 @@ if (class_exists('WP_Customize_Control') && !class_exists('Charity_Foundation_Pr
     class Charity_Foundation_Pro_Control extends WP_Customize_Control{
 
     public function render_content(){?>
-        <label style="overflow: hidden; zoom: 1;">
-            <div class="col-md upsell-btn">
-                <a href="<?php echo esc_url( NGO_CHARITY_DONATION_BUY_PRO ); ?>" target="blank" class="btn btn-success btn"><?php esc_html_e('UPGRADE CHARITY PREMIUM','charity-foundation');?> </a>
-            </div>
-            <div class="col-md">
-                <img class="charity_foundation_img_responsive " src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/screenshot.png">
-            </div>
-            <div class="col-md">
-                <h3 style="margin-top:10px; margin-left: 20px; font-size:12px; text-decoration:underline; color:#333;"><?php esc_html_e('CHARITY PREMIUM - Features', 'charity-foundation'); ?></h3>
-                <ul style="padding-top:10px">
-                    <li class="upsell-charity_foundation"> <div class="dashicons dashicons-yes"></div> <?php esc_html_e('Responsive Design', 'charity-foundation');?> </li>
-                    <li class="upsell-charity_foundation"> <div class="dashicons dashicons-yes"></div> <?php esc_html_e('Boxed or fullwidth layout', 'charity-foundation');?> </li>
-                    <li class="upsell-charity_foundation"> <div class="dashicons dashicons-yes"></div> <?php esc_html_e('Shortcode Support', 'charity-foundation');?> </li>
-                    <li class="upsell-charity_foundation"> <div class="dashicons dashicons-yes"></div> <?php esc_html_e('Demo Importer', 'charity-foundation');?> </li>
-                    <li class="upsell-charity_foundation"> <div class="dashicons dashicons-yes"></div> <?php esc_html_e('Section Reordering', 'charity-foundation');?> </li>
-                    <li class="upsell-charity_foundation"> <div class="dashicons dashicons-yes"></div> <?php esc_html_e('Contact Page Template', 'charity-foundation');?> </li>
-                    <li class="upsell-charity_foundation"> <div class="dashicons dashicons-yes"></div> <?php esc_html_e('Multiple Blog Layouts', 'charity-foundation');?> </li>
-                    <li class="upsell-charity_foundation"> <div class="dashicons dashicons-yes"></div> <?php esc_html_e('Unlimited Color Options', 'charity-foundation');?> </li>
-                    <li class="upsell-charity_foundation"> <div class="dashicons dashicons-yes"></div> <?php esc_html_e('Designed with HTML5 and CSS3', 'charity-foundation');?> </li>
-                    <li class="upsell-charity_foundation"> <div class="dashicons dashicons-yes"></div> <?php esc_html_e('Customizable Design & Code', 'charity-foundation');?> </li>
-                    <li class="upsell-charity_foundation"> <div class="dashicons dashicons-yes"></div> <?php esc_html_e('Cross Browser Support', 'charity-foundation');?> </li>
-                    <li class="upsell-charity_foundation"> <div class="dashicons dashicons-yes"></div> <?php esc_html_e('Detailed Documentation Included', 'charity-foundation');?> </li>
-                    <li class="upsell-charity_foundation"> <div class="dashicons dashicons-yes"></div> <?php esc_html_e('Stylish Custom Widgets', 'charity-foundation');?> </li>
-                    <li class="upsell-charity_foundation"> <div class="dashicons dashicons-yes"></div> <?php esc_html_e('Patterns Background', 'charity-foundation');?> </li>
-                    <li class="upsell-charity_foundation"> <div class="dashicons dashicons-yes"></div> <?php esc_html_e('WPML Compatible (Translation Ready)', 'charity-foundation');?> </li>
-                    <li class="upsell-charity_foundation"> <div class="dashicons dashicons-yes"></div> <?php esc_html_e('Woo-commerce Compatible', 'charity-foundation');?> </li>
-                    <li class="upsell-charity_foundation"> <div class="dashicons dashicons-yes"></div> <?php esc_html_e('Full Support', 'charity-foundation');?> </li>
-                    <li class="upsell-charity_foundation"> <div class="dashicons dashicons-yes"></div> <?php esc_html_e('10+ Sections', 'charity-foundation');?> </li>
-                    <li class="upsell-charity_foundation"> <div class="dashicons dashicons-yes"></div> <?php esc_html_e('Live Customizer', 'charity-foundation');?> </li>
-                    <li class="upsell-charity_foundation"> <div class="dashicons dashicons-yes"></div> <?php esc_html_e('AMP Ready', 'charity-foundation');?> </li>
-                    <li class="upsell-charity_foundation"> <div class="dashicons dashicons-yes"></div> <?php esc_html_e('Clean Code', 'charity-foundation');?> </li>
-                    <li class="upsell-charity_foundation"> <div class="dashicons dashicons-yes"></div> <?php esc_html_e('SEO Friendly', 'charity-foundation');?> </li>
-                    <li class="upsell-charity_foundation"> <div class="dashicons dashicons-yes"></div> <?php esc_html_e('Supper Fast', 'charity-foundation');?> </li>
-                </ul>
-            </div>
-            <div class="col-md upsell-btn upsell-btn-bottom">
-	            <a href="<?php echo esc_url( NGO_CHARITY_DONATION_BUNDLE_LINK ); ?>" target="blank" class="btn btn-success btn"><?php esc_html_e('WP Theme Bundle (125+ Themes)','ngo-charity-donation');?> </a>
-		    		</div>
-        </label>
+        <div style="background: linear-gradient(135deg, #2B136B 0%, #A47AE2 100%); padding: 20px; border-radius: 8px; text-align: center; color: #fff;">
+			
+			<h3 style="margin-top: 0; color: #fff;">
+				<?php esc_html_e('Unlock Advanced Features', 'ngo-charity-donation'); ?>
+			</h3>
+	
+			<p style="margin: 15px 0;">
+				<?php esc_html_e('Upgrade to Pro to get:', 'ngo-charity-donation'); ?>
+			</p>
+	
+			<ul style="list-style: none; padding: 0; text-align: left; max-width: 300px; margin: 20px auto;">
+				<li>✓ <?php esc_html_e('12+ Premium Header Layouts', 'ngo-charity-donation'); ?></li>
+				<li>✓ <?php esc_html_e('Advanced Footer Builder', 'ngo-charity-donation'); ?></li>
+				<li>✓ <?php esc_html_e('Typography Controls', 'ngo-charity-donation'); ?></li>
+				<li>✓ <?php esc_html_e('WooCommerce Styling Options', 'ngo-charity-donation'); ?></li>
+				<li>✓ <?php esc_html_e('Priority Support', 'ngo-charity-donation'); ?></li>
+				<li>✓ <?php esc_html_e('One-Click Demo Import', 'ngo-charity-donation'); ?></li>
+			</ul>
+	
+			<a href="<?php echo esc_url(admin_url('themes.php?page=ngo-charity-donation-pro')); ?>"
+				style="display:inline-block;background:#fff;color:#667eea;padding:12px 30px;text-decoration:none;border-radius:4px;font-weight:600;margin:10px 5px;">
+				<?php esc_html_e('View All Features', 'ngo-charity-donation'); ?>
+			</a>
+	
+			<a href="<?php echo esc_url( NGO_CHARITY_DONATION_BUY_PRO ); ?>" target="_blank"
+				style="display:inline-block;background:#ffc107;color:#333;padding:12px 30px;text-decoration:none;border-radius:4px;font-weight:600;margin:10px 5px;">
+				<?php esc_html_e('Upgrade Now 🚀', 'ngo-charity-donation'); ?>
+			</a>
+
+			<a href="<?php echo esc_url( NGO_CHARITY_DONATION_BUNDLE_LINK ); ?>" target="_blank"
+				style="display: inline-block; background: #28a745; color: #fff; padding: 12px 30px; text-decoration: none; border-radius: 4px; font-weight: 600; margin: 10px 5px;">
+				<?php esc_html_e('WordPress Bundle 🎁', 'ngo-charity-donation'); ?>
+			</a>
+	
+		</div>
     <?php } }
 endif;
-
