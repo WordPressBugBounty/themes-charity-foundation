@@ -4,7 +4,7 @@ Tags: blog, news, portfolio, one-column, two-columns, three-columns, four-column
 Requires at least: 5.0
 Requires PHP: 5.6
 Tested up to: 6.9
-Stable tag: 6.4.1
+Stable tag: 6.4.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -15,6 +15,9 @@ Charity Foundation is an elegant WordPress theme that brings an excellent layout
 Charity Foundation is an elegant and modern theme designed for charity organizations, non-profit foundations, NGOs, fundraising campaigns, donation platforms, crowdfunding initiatives, social welfare programs, community support projects, and humanitarian relief services. It is also suitable for organizations working in child welfare, disaster relief, medical aid support, pandemic relief funds, educational donations, and volunteer-driven social causes. The design is clean, professional, and purpose-driven, ensuring that campaigns, donation goals, causes, events, testimonials, and impact stories are presented clearly to inspire trust and engagement. Fully responsive and mobile-friendly, it delivers smooth performance across desktops, tablets, and smartphones for wider accessibility. Optimized code structure ensures fast loading speed and improved search visibility, helping organizations reach more supporters and donors effectively. The theme includes flexible customization options for layouts, colors, typography, and branding elements, enabling a strong and consistent identity without technical complexity. It also supports donation systems, payment gateway integration, and fundraising tools, making it easy to manage contributions and campaigns. Social media integration and call-to-action sections further enhance outreach and donor engagement. Overall, it provides a complete solution for building a powerful and trustworthy online presence for non-profit and charitable organizations.
 
 == Changelog ==
+
+= 6.4.2 =
+* Optimized Frontend Performance.
 
 = 6.4.1 =
 * Updated Theme Functions.
