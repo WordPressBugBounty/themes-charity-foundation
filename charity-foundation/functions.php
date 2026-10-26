@@ -550,7 +550,6 @@ if (class_exists('WP_Customize_Control') && !class_exists('Charity_Foundation_Pr
 			</p>
 	
 			<ul style="list-style: none; padding: 0; text-align: left; max-width: 300px; margin: 20px auto;">
-				<li>✓ <?php esc_html_e('12+ Premium Header Layouts', 'ngo-charity-donation'); ?></li>
 				<li>✓ <?php esc_html_e('Advanced Footer Builder', 'ngo-charity-donation'); ?></li>
 				<li>✓ <?php esc_html_e('Typography Controls', 'ngo-charity-donation'); ?></li>
 				<li>✓ <?php esc_html_e('WooCommerce Styling Options', 'ngo-charity-donation'); ?></li>
